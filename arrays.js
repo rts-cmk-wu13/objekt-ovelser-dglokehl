@@ -59,6 +59,10 @@ const studentListDiv = document.querySelector(".studentlist");
 students.forEach(student => {
     const studentDiv = document.createElement("div");
     studentDiv.classList.add("student")
-    studentDiv.textContent = `${student.name}, Alder: ${student.age}, Uddannelse ${student.course}`;
+    const studentHeadline = document.createElement("h2");
+    studentHeadline.textContent = student.name
+    const studentInfo = document.createElement("p");
+    studentInfo.textContent = `Alder: ${student.age}, Uddannelse ${student.course}`;
+    studentDiv.append(studentHeadline, studentInfo);
     studentListDiv.append(studentDiv);
 });
